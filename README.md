@@ -4,7 +4,7 @@ Welcome to my personal webpage! Learn about my projects, experience, artwork, an
 Stack (so far)
 1. next.js
 2. tailwind css
-3. framer motion perhaps
+3. framer motion
 
 ## TO DO
 - finish landing panel
