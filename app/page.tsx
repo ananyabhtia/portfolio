@@ -3,13 +3,13 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import LandingPanel from "./components/landingPanel";
 import ProjectsPanel from "./components/projectsPanel";
-import SocialsPanel from "./components/socialsPanel";
+import ContactPanel from "./components/contactPanel";
 import FunPanel from "./components/funPanel";
 import MePanel from "./components/mePanel";
 
 export default function Home() {
   const [openPanel, setOpenPanel] = useState<
-    "landing" | "projects" | "socials" | "fun" | "me"
+    "landing" | "projects" | "contact" | "fun" | "me"
   >("landing");
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-black">
@@ -20,7 +20,7 @@ export default function Home() {
           y:
             openPanel === "projects"
               ? "100%"
-              : openPanel === "socials"
+              : openPanel === "contact"
               ? "-100%"
               : "0",
           x: openPanel === "fun" ? "100%" : openPanel === "me" ? "-100%" : "0",
@@ -30,7 +30,7 @@ export default function Home() {
       >
         <LandingPanel
           onOpenProjects={() => setOpenPanel("projects")}
-          onOpenSocials={() => setOpenPanel("socials")}
+          onOpenContact={() => setOpenPanel("contact")}
           onOpenFun={() => setOpenPanel("fun")}
           onOpenMe={() => setOpenPanel("me")}
         />
@@ -46,14 +46,14 @@ export default function Home() {
         <ProjectsPanel onBack={() => setOpenPanel("landing")} />
       </motion.div>
 
-      {/* socials panel */}
+      {/* contact panel */}
       <motion.div
         initial={{ y: "100%" }}
-        animate={{ y: openPanel === "socials" ? "0" : "100%" }}
+        animate={{ y: openPanel === "contact" ? "0" : "100%" }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
         className="absolute inset-0"
       >
-        <SocialsPanel onBack={() => setOpenPanel("landing")} />
+        <ContactPanel onBack={() => setOpenPanel("landing")} />
       </motion.div>
 
       {/* fun panel */}

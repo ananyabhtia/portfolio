@@ -3,67 +3,150 @@ import { easeInOut, motion } from "motion/react";
 
 export default function ProjectsPanel({ onBack }: { onBack: () => void }) {
   const projects = [
-    { title: "snaplet", skills: ["React", "Tailwind", "Firebase"] },
-    { title: "salad", skills: ["Python", "Flask", "SQL"] },
-    { title: "Good Neighbor", skills: ["Next.js", "Framer Motion"] },
-    { title: "Ignite", skills: ["AWS", "Lambda", "API Gateway"] },
-    { title: "Course Marketplace", skills: ["React", "Tailwind", "Firebase"] },
-    { title: "TIDAL Lab", skills: ["Python", "Flask", "SQL"] },
-    { title: "Project 3", skills: ["Next.js", "Framer Motion"] },
-    { title: "Project 4", skills: ["AWS", "Lambda", "API Gateway"] },
-    { title: "Project 1", skills: ["React", "Tailwind", "Firebase"] },
-    { title: "Project 2", skills: ["Python", "Flask", "SQL"] },
-    { title: "Project 3", skills: ["Next.js", "Framer Motion"] },
-    { title: "Project 4", skills: ["AWS", "Lambda", "API Gateway"] },
+    {
+      title: "snaplet",
+      logo: "snaplet-logo.png",
+      image: "snaplet-random.png",
+      skills: [
+        "React.js",
+        "dnd-kit",
+        "HTML",
+        "Tailwind CSS",
+        "NoSQL",
+        "Firestore",
+        "Firebase",
+      ],
+    },
+    {
+      title: "salad",
+      logo: "salad-logo-01.svg",
+      image: "salad-random.png",
+      skills: [
+        "Python",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "AWS Lambda",
+        "AWS API Gateway",
+        "AWS EC2",
+        "SSL",
+      ],
+    },
+    {
+      title: "Good Neighbor",
+      image: "good-neighbor.png",
+      skills: [
+        "React.js",
+        "Tailwind CSS",
+        "Google Maps API",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Firebase",
+        "Realtime Database",
+        "Firebase Authentication",
+      ],
+    },
+    {
+      title: "Ignite",
+      logo: "ignite-logo.png",
+      image: "ignite-preview.png",
+      skills: [
+        "React.js",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Realtime Database",
+        "Firebase Authentication",
+        "Vite",
+      ],
+    },
+    {
+      title: "course-match",
+      image: "course-mktplc-ss.png",
+      skills: [
+        "Ruby on Rails",
+        "PostgreSQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "Kaminari",
+        "Google Omniauth",
+        "Faker",
+        "Cucumber",
+      ],
+    },
+  ];
+
+  const rainbow = [
+    "bg-pink-300 hover:bg-pink-500",
+    "bg-red-300 hover:bg-red-500",
+    "bg-orange-300 hover:bg-orange-500",
+    "bg-yellow-200 hover:bg-yellow-400",
+    "bg-green-300 hover:bg-green-500",
+    "bg-blue-300 hover:bg-blue-500",
+    "bg-purple-300 hover:bg-purple-500",
   ];
 
   return (
     <div className="flex flex-col h-full bg-white pl-5 pr-5">
+      <button
+        onClick={onBack}
+        className="work-sans font-bold absolute top-5 right-5 px-6 py-3 rounded-full bg-gray-200 hover:bg-blue-300 transition shadow-md"
+      >
+        Back ↓
+      </button>
       {/* header div */}
-      <div className="flex flex-row h-1/6 items-center justify-between mt-10 pl-6 pr-6">
-        {/* spacer */}
-        <div className="w-1/3" />
-
+      <div className="flex flex-row h-1/6 items-center justify-center mt-10 pl-6 pr-6">
         {/* centered image */}
         <motion.img
           src="projects-text.png"
           alt="projects text"
-          className="h-full w-auto object-contain flex-1 mx-auto"
+          className="h-full w-auto object-contain"
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: easeInOut }}
         />
-
-        {/* button on right */}
-        <div className="flex justify-end w-1/3">
-          <button
-            onClick={onBack}
-            className="px-6 py-3 rounded-full bg-gray-200 hover:bg-gray-300 transition"
-          >
-            ↑ Back
-          </button>
-        </div>
       </div>
       {/* body grid div */}
-      <div className="grid grid-cols-4 gap-6 p-6 h-full overflow-auto">
+      <div className="flex flex-row items-center justify-center pr-6 pl-6 mt-4 mb-2 ">
+        <p className="work-sans text-lg font-medium">
+          scroll to explore my research, class, and personal software projects.
+          click on a project to learn more (coming soon)!
+        </p>
+      </div>
+      <div className="grid grid-cols-3 gap-10 p-6 h-full overflow-auto">
         {/* card div */}
         {projects.map((project, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center w-full h-full border-2 border-white rounded-xl shadow-xl p-3"
+            className="flex flex-col items-center w-full h-[30rem] rounded-xl shadow-xl p-4 bg-blue-100 hover:bg-blue-200  overflow-auto"
           >
             <img
-              className="h-3/5 w-full rounded-xl object-cover"
-              src={"file.svg"}
+              className="h-[16rem] w-full rounded-xl object-cover shrink-0"
+              src={project.image || "file.svg"}
             />
-            <h1 className="work-sans font-semibold text-xl mt-2">
-              {project.title}
-            </h1>
+            {project.logo ? (
+              <img src={project.logo} className="h-1/9 object-cover mt-4" />
+            ) : project.title === "Good Neighbor" ? (
+              <h1 className="manrope font-extrabold text-3xl mt-4 text-indigo-900">
+                {project.title}
+              </h1>
+            ) : (
+              <h1 className="work-sans font-semibold text-3xl mt-4">
+                {project.title}
+              </h1>
+            )}
             {/* skills div */}
-            <div className="flex flex-wrap gap-2 justify-center mt-2 overflow-auto">
+            <div className="flex flex-wrap gap-2 justify-center mt-4">
               {project.skills.map((skill, i) => (
                 <div
                   key={i}
-                  className="px-3 py-1 rounded-full bg-pink-300 hover:bg-pink-500 transition-colors cursor-default duration-200 work-sans"
+                  className={`px-3 py-1 rounded-full ${
+                    rainbow[i % rainbow.length]
+                  } transition-colors cursor-default duration-200 work-sans`}
                 >
                   {skill}
                 </div>

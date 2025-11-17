@@ -3,14 +3,14 @@ import { easeInOut, motion } from "motion/react";
 
 type LandingPanelProps = {
   onOpenProjects: () => void;
-  onOpenSocials: () => void;
+  onOpenContact: () => void;
   onOpenFun: () => void;
   onOpenMe: () => void;
 };
 
 export default function LandingPanel({
   onOpenProjects,
-  onOpenSocials,
+  onOpenContact,
   onOpenFun,
   onOpenMe,
 }: LandingPanelProps) {
@@ -30,17 +30,17 @@ export default function LandingPanel({
       <div className="absolute top-0 mt-5">
         <button
           onClick={onOpenProjects}
-          className="px-6 py-3 rounded-full bg-pink-300 hover:bg-pink-400 transition"
+          className="work-sans font-bold px-6 py-3 rounded-full bg-blue-300 hover:bg-blue-400 transition"
         >
           Projects ↓
         </button>
       </div>
       <div className="absolute bottom-0 mb-5">
         <button
-          onClick={onOpenSocials}
+          onClick={onOpenContact}
           className="px-6 py-3 rounded-full bg-green-300 hover:bg-green-400 transition"
         >
-          Socials ↑
+          Contact Me ↑
         </button>
       </div>
       <div className="absolute left-0 ml-1">
