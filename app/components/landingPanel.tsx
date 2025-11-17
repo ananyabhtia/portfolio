@@ -16,22 +16,6 @@ export default function LandingPanel({
 }: LandingPanelProps) {
   return (
     <div className="flex flex-col items-center justify-center h-full bg-white">
-      {/* <div className="absolute top-0 left-0 w-full h-1/8">
-        <div className="absolute inset-0 bg-gradient-to-b from-pink-200 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-pink-500/50 to-transparent opacity-0 transition-opacity duration-1000 ease-out hover:opacity-100"></div>
-      </div>
-      <div className="absolute bottom-0 left-0 w-full h-1/8">
-        <div className="absolute inset-0 bg-gradient-to-t from-green-200 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/40 to-transparent opacity-0 transition-opacity duration-1000 ease-out hover:opacity-100"></div>
-      </div>
-      <div className="absolute top-0 left-0 h-full w-1/10">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/30 to-transparent opacity-0 transition-opacity duration-1000 ease-out hover:opacity-100"></div>
-      </div>
-      <div className="absolute top-0 right-0 h-full w-1/10">
-        <div className="absolute inset-0 bg-gradient-to-l from-orange-200 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-l from-orange-600/30 to-transparent opacity-0 transition-opacity duration-1000 ease-out hover:opacity-100"></div>
-      </div> */}
       <motion.img
         src="site-text.png"
         alt="hi, i'm ananya text"
@@ -39,6 +23,10 @@ export default function LandingPanel({
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: easeInOut }}
       />
+      <h1 className="work-sans font-semibold text-4xl mt-5">
+        computer science, marketing, art
+      </h1>
+      <h1 className="work-sans text-3xl">@ northwestern university</h1>
       <div className="absolute top-0 mt-5">
         <button
           onClick={onOpenProjects}
@@ -73,4 +61,23 @@ export default function LandingPanel({
       </div>
     </div>
   );
+}
+
+{
+  /* <div className="absolute top-0 left-0 w-full h-1/8">
+        <div className="absolute inset-0 bg-gradient-to-b from-pink-200 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-pink-500/50 to-transparent opacity-0 transition-opacity duration-1000 ease-out hover:opacity-100"></div>
+      </div>
+      <div className="absolute bottom-0 left-0 w-full h-1/8">
+        <div className="absolute inset-0 bg-gradient-to-t from-green-200 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/40 to-transparent opacity-0 transition-opacity duration-1000 ease-out hover:opacity-100"></div>
+      </div>
+      <div className="absolute top-0 left-0 h-full w-1/10">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/30 to-transparent opacity-0 transition-opacity duration-1000 ease-out hover:opacity-100"></div>
+      </div>
+      <div className="absolute top-0 right-0 h-full w-1/10">
+        <div className="absolute inset-0 bg-gradient-to-l from-orange-200 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-l from-orange-600/30 to-transparent opacity-0 transition-opacity duration-1000 ease-out hover:opacity-100"></div>
+      </div> */
 }
