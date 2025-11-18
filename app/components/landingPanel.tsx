@@ -15,48 +15,48 @@ export default function LandingPanel({
   onOpenMe,
 }: LandingPanelProps) {
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-white">
+    <div className="flex flex-col items-center justify-center h-full bg-white will-change-transform overflow-auto">
       <motion.img
-        src="site-text.png"
+        src="site-text-caps.png"
         alt="hi, i'm ananya text"
-        className="w-3/5"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 3, repeat: Infinity, ease: easeInOut }}
+        className="w-3/5 will-change-transform"
+        animate={{ y: [0, -12, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: easeInOut }}
       />
       <h1 className="work-sans font-semibold text-4xl mt-5">
-        computer science, marketing, art
+        Computer Science, Marketing, Art
       </h1>
-      <h1 className="work-sans text-3xl">@ northwestern university</h1>
+      <h1 className="work-sans text-3xl">@ Northwestern University</h1>
       <div className="absolute top-0 mt-5">
         <button
           onClick={onOpenProjects}
-          className="work-sans font-bold px-6 py-3 rounded-full bg-blue-300 hover:bg-blue-400 transition"
+          className="shadow-md work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-blue-300 active:bg-blue-400 transition cursor-pointer"
         >
-          Projects ↓
+          PROJECTS
         </button>
       </div>
       <div className="absolute bottom-0 mb-5">
         <button
           onClick={onOpenContact}
-          className="px-6 py-3 rounded-full bg-green-300 hover:bg-green-400 transition"
+          className="shadow-md work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-green-300 active:bg-green-400 transition cursor-pointer"
         >
-          Contact Me ↑
+          CONTACT ME
         </button>
       </div>
-      <div className="absolute left-0 ml-1">
+      <div className="absolute -left-8">
         <button
           onClick={onOpenFun}
-          className="rotate-[-90deg] px-6 py-3 rounded-full bg-blue-300 hover:bg-blue-400 transition"
+          className="shadow-md rotate-[-90deg] work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-purple-300 active:bg-purple-400 transition cursor-pointer"
         >
-          Fun →
+          ARTWORK
         </button>
       </div>
-      <div className="absolute right-0 mr-1">
+      <div className="absolute -right-8">
         <button
           onClick={onOpenMe}
-          className="rotate-[90deg] px-6 py-3 rounded-full bg-orange-300 hover:bg-orange-400 transition"
+          className="shadow-md rotate-[90deg] work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-orange-300 active:bg-orange-400 transition cursor-pointer"
         >
-          ← Me
+          ABOUT ME
         </button>
       </div>
     </div>

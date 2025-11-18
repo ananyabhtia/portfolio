@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Honk&family=Manrope:wght@200..800&family=Press+Start+2P&family=Racing+Sans+One&family=Work+Sans:ital,wght@1,100..900&display=swap');
 @import "tailwindcss";
 
 
@@ -31,3 +32,10 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+.work-sans-italic {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+}
+

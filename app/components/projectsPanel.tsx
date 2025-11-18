@@ -92,32 +92,32 @@ export default function ProjectsPanel({ onBack }: { onBack: () => void }) {
   ];
 
   return (
-    <div className="flex flex-col h-full bg-white pl-5 pr-5">
+    <div className="flex flex-col h-full bg-white pl-5 pr-5 will-change-transform overflow-auto">
       <button
         onClick={onBack}
-        className="work-sans font-bold absolute top-5 right-5 px-6 py-3 rounded-full bg-gray-200 hover:bg-blue-300 transition shadow-md"
+        className="absolute top-5 right-5 shadow-md work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-blue-300 active:bg-blue-400 transition cursor-pointer"
       >
-        Back ↓
+        BACK
       </button>
       {/* header div */}
       <div className="flex flex-row h-1/6 items-center justify-center mt-10 pl-6 pr-6">
         {/* centered image */}
         <motion.img
-          src="projects-text.png"
+          src="projects-caps.png"
           alt="projects text"
-          className="h-full w-auto object-contain"
+          className="h-full w-auto object-contain will-change-transform"
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 3, repeat: Infinity, ease: easeInOut }}
         />
       </div>
-      {/* body grid div */}
-      <div className="flex flex-row items-center justify-center pr-6 pl-6 mt-4 mb-2 ">
+      <div className="flex flex-row items-center justify-center pr-6 pl-6 mt-4 mb-2">
         <p className="work-sans text-lg font-medium">
-          scroll to explore my research, class, and personal software projects.
-          click on a project to learn more (coming soon)!
+          Scroll to explore my research, class, and personal software projects.
+          Click on a project to learn more (coming soon)!
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-10 p-6 h-full overflow-auto">
+      {/* body grid div */}
+      <div className="grid grid-cols-3 gap-10 p-6">
         {/* card div */}
         {projects.map((project, idx) => (
           <div

@@ -13,6 +13,11 @@ export default function Home() {
   >("landing");
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-black">
+      {/* cat logo watermark! */}
+      <img
+        src="logo-black.png"
+        className="absolute bottom-5 right-5 opacity-25 w-[4rem] z-100"
+      />
       {/* landing panel */}
       <motion.div
         initial={{ y: "0", x: "0" }}
