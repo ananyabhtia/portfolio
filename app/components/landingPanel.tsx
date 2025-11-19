@@ -19,6 +19,8 @@ export default function LandingPanel({
       <motion.img
         src="site-text-caps.png"
         alt="hi, i'm ananya text"
+        loading="eager"
+        fetchPriority="high"
         style={{ width: "min(60vw, 60%)" }}
         className="will-change-transform"
         animate={{ y: [0, -12, 0] }}

@@ -15,7 +15,7 @@ export default function ContactPanel({ onBack }: { onBack: () => void }) {
     >
       <button
         onClick={onBack}
-        className="absolute shadow-md work-sans-italic border-2 font-semibold rounded-full hover:bg-green-300 active:bg-green-400 transition cursor-pointer bg-white z-100"
+        className="fixed shadow-md work-sans-italic border-2 font-semibold rounded-full hover:bg-green-300 active:bg-green-400 transition cursor-pointer bg-white z-100"
         style={{
           top: "max(1.25rem, 1.5vh)",
           right: "max(1.25rem, 1.5vw)",
