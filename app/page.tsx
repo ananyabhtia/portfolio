@@ -16,7 +16,12 @@ export default function Home() {
       {/* cat logo watermark! */}
       <img
         src="logo-black.png"
-        className="absolute bottom-5 right-5 opacity-25 w-[4rem] z-100"
+        className="absolute opacity-25 z-100"
+        style={{
+          bottom: "max(1.25rem, 1.5vh)",
+          right: "max(1.25rem, 1.5vw)",
+          width: "clamp(3rem, 4vw, 4rem)",
+        }}
       />
       {/* landing panel */}
       <motion.div

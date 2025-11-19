@@ -92,15 +92,36 @@ export default function ProjectsPanel({ onBack }: { onBack: () => void }) {
   ];
 
   return (
-    <div className="flex flex-col h-full bg-white pl-5 pr-5 will-change-transform overflow-auto">
+    <div
+      className="flex flex-col h-full bg-white will-change-transform overflow-auto"
+      style={{
+        paddingLeft: "max(1.25rem, 1.25vw)",
+        paddingRight: "max(1.25rem, 1.25vw)",
+        paddingBottom: "max(1.5rem, 1.5vw)",
+      }}
+    >
       <button
         onClick={onBack}
-        className="absolute top-5 right-5 shadow-md work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-blue-300 active:bg-blue-400 transition cursor-pointer"
+        className="absolute shadow-md work-sans-italic border-2 font-semibold rounded-full hover:bg-blue-300 active:bg-blue-400 transition cursor-pointer bg-white z-100"
+        style={{
+          top: "max(1.25rem, 1.5vh)",
+          right: "max(1.25rem, 1.5vw)",
+          fontSize: "clamp(0.875rem, 1.25vw, 1.25rem)",
+          padding: "clamp(0.5rem, 0.75vw, 0.75rem) clamp(1rem, 1.5vw, 1.5rem)",
+        }}
       >
         BACK
       </button>
       {/* header div */}
-      <div className="flex flex-row h-1/6 items-center justify-center mt-10 pl-6 pr-6">
+      <div
+        className="flex flex-row items-center justify-center"
+        style={{
+          height: "max(8vh, 9rem)",
+          marginTop: "4rem",
+          paddingLeft: "max(1.5rem, 1.5vw)",
+          paddingRight: "max(1.5rem, 1.5vw)",
+        }}
+      >
         {/* centered image */}
         <motion.img
           src="projects-caps.png"
@@ -110,15 +131,38 @@ export default function ProjectsPanel({ onBack }: { onBack: () => void }) {
           transition={{ duration: 3, repeat: Infinity, ease: easeInOut }}
         />
       </div>
-      <div className="flex flex-row items-center justify-center pr-6 pl-6 mt-4 mb-2">
-        <p className="work-sans text-lg font-medium">
+      <div
+        className="flex flex-row items-center justify-center"
+        style={{
+          paddingRight: "max(1.5rem, 2vw)",
+          paddingLeft: "max(1.5rem, 2vw)",
+          marginTop: "max(1rem, 1.5vh)",
+          marginBottom: "max(0.5rem, 1vh)",
+        }}
+      >
+        <p
+          className="work-sans font-medium"
+          style={{
+            fontSize: "clamp(0.875rem, 1.125vw, 1.125rem)",
+            textAlign: "center",
+          }}
+        >
           Scroll to explore my research, class, and personal software projects.
           Click on a project to learn more (coming soon)!
         </p>
       </div>
       {/* body grid div */}
-      <div className="grid grid-cols-3 gap-10 p-6">
-        {/* card div */}
+      <div
+        className="grid"
+        style={{
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(max(250px, 25vw), 1fr))",
+          gap: "max(2rem, 2.5vw)",
+          paddingLeft: "max(1.5rem, 1.5vw)",
+          paddingRight: "max(1.5rem, 1.5vw)",
+          paddingTop: "max(1.5rem, 1.5vw)",
+        }}
+      >
         {projects.map((project, idx) => (
           <div
             key={idx}

@@ -6,15 +6,35 @@ import { faEnvelope, faFile } from "@fortawesome/free-regular-svg-icons";
 
 export default function ContactPanel({ onBack }: { onBack: () => void }) {
   return (
-    <div className="flex flex-col h-full bg-white pl-5 pr-5 will-change-transform">
+    <div
+      className="flex flex-col h-full bg-white will-change-transform overflow-auto"
+      style={{
+        paddingLeft: "max(1.25rem, 1.25vw)",
+        paddingRight: "max(1.25rem, 1.25vw)",
+      }}
+    >
       <button
         onClick={onBack}
-        className="absolute top-5 right-5 shadow-md work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-green-300 active:bg-green-400 transition cursor-pointer"
+        className="absolute shadow-md work-sans-italic border-2 font-semibold rounded-full hover:bg-green-300 active:bg-green-400 transition cursor-pointer bg-white z-100"
+        style={{
+          top: "max(1.25rem, 1.5vh)",
+          right: "max(1.25rem, 1.5vw)",
+          fontSize: "clamp(0.875rem, 1.25vw, 1.25rem)",
+          padding: "clamp(0.5rem, 0.75vw, 0.75rem) clamp(1rem, 1.5vw, 1.5rem)",
+        }}
       >
         BACK
       </button>
       {/* header div */}
-      <div className="flex flex-row h-1/8 items-center justify-center mt-20 pl-6 pr-6">
+      <div
+        className="flex flex-row items-center justify-center"
+        style={{
+          height: "max(8vh, 6.5rem)",
+          marginTop: "max(5rem, 6vh)",
+          paddingLeft: "max(1.5rem, 1.5vw)",
+          paddingRight: "max(1.5rem, 1.5vw)",
+        }}
+      >
         {/* centered image */}
         <motion.img
           src="contact-caps.png"
@@ -24,28 +44,74 @@ export default function ContactPanel({ onBack }: { onBack: () => void }) {
           transition={{ duration: 3, repeat: Infinity, ease: easeInOut }}
         />
       </div>
-      <div className="flex flex-col items-center justify-center pr-6 pl-6 mt-4 mb-2 ">
-        <p className="work-sans text-2xl font-semibold mt-2">
+      <div
+        className="flex flex-col items-center justify-center"
+        style={{
+          paddingRight: "max(1.5rem, 2vw)",
+          paddingLeft: "max(1.5rem, 2vw)",
+          marginTop: "max(1rem, 1.5vh)",
+          marginBottom: "max(0.5rem, 1vh)",
+        }}
+      >
+        <p
+          className="work-sans font-semibold"
+          style={{
+            fontSize: "clamp(1.25rem, 1.5vw, 1.5rem)",
+            marginTop: "max(0.5rem, 0.75vh)",
+            textAlign: "center",
+          }}
+        >
           I love meeting new people!
         </p>
-        <p className="work-sans text-lg font-medium">
+        <p
+          className="work-sans font-medium"
+          style={{
+            fontSize: "clamp(0.875rem, 1.125vw, 1.125rem)",
+            textAlign: "center",
+          }}
+        >
           Connect with me on any of my socials below, and explore my resume for
           more about my work!
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-10 h-5/6 justify-center ml-60 mr-60 mb-10 mt-5">
+      <div
+        className="grid"
+        style={{
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(max(200px, 25vw), 1fr))",
+          gap: "max(2rem, 2.5vw)",
+          justifyContent: "center",
+          marginLeft: "max(15vw, 5rem)",
+          marginRight: "max(15vw, 5rem)",
+          marginBottom: "max(3rem, 6vh)",
+          marginTop: "max(1.25rem, 2vh)",
+        }}
+      >
         <a
           href="https://www.linkedin.com/in/ananyabhtia/"
           target="_blank"
           rel="noopener noreferrer"
           className="block"
         >
-          <div className="flex flex-col h-[14rem] justify-center items-center bg-green-100 rounded-xl shadow-xl cursor-pointer hover:bg-green-200 active:bg-green-300">
+          <div
+            className="flex flex-col justify-center items-center bg-green-100 rounded-xl shadow-xl cursor-pointer hover:bg-green-200 active:bg-green-300"
+            style={{ height: "14rem" }}
+          >
             <FontAwesomeIcon
               icon={faSquareLinkedin}
-              className="text-6xl text-green-800"
+              style={{ fontSize: "clamp(3rem, 4vw, 3.75rem)" }}
+              className="text-green-800"
             />
-            <h1 className="work-sans font-semibold text-2xl mt-2">
+            <h1
+              className="work-sans font-semibold"
+              style={{
+                fontSize: "clamp(1.125rem, 1.5vw, 1.5rem)",
+                marginTop: "max(0.5rem, 0.75vh)",
+                textAlign: "center",
+                paddingLeft: "1vw",
+                paddingRight: "1vw",
+              }}
+            >
               Let's connect
             </h1>
           </div>
@@ -56,23 +122,51 @@ export default function ContactPanel({ onBack }: { onBack: () => void }) {
           rel="noopener noreferrer"
           className="block"
         >
-          <div className="flex flex-col h-[14rem] justify-center items-center bg-green-100 rounded-xl shadow-xl cursor-pointer hover:bg-green-200 active:bg-green-300">
+          <div
+            className="flex flex-col justify-center items-center bg-green-100 rounded-xl shadow-xl cursor-pointer hover:bg-green-200 active:bg-green-300"
+            style={{ height: "14rem" }}
+          >
             <FontAwesomeIcon
               icon={faGithub}
-              className="text-6xl text-green-800"
+              style={{ fontSize: "clamp(3rem, 4vw, 3.75rem)" }}
+              className="text-green-800"
             />
-            <h1 className="work-sans font-semibold text-2xl mt-2">
+            <h1
+              className="work-sans font-semibold"
+              style={{
+                fontSize: "clamp(1.125rem, 1.5vw, 1.5rem)",
+                marginTop: "max(0.5rem, 0.75vh)",
+                textAlign: "center",
+                paddingLeft: "1vw",
+                paddingRight: "1vw",
+              }}
+            >
               My repositories
             </h1>
           </div>
         </a>
         <a href="mailto:ananyab@u.northwestern.edu" className="block">
-          <div className="flex flex-col h-[14rem] justify-center items-center bg-green-100 rounded-xl shadow-xl cursor-pointer hover:bg-green-200 active:bg-green-300">
+          <div
+            className="flex flex-col justify-center items-center bg-green-100 rounded-xl shadow-xl cursor-pointer hover:bg-green-200 active:bg-green-300"
+            style={{ height: "14rem" }}
+          >
             <FontAwesomeIcon
               icon={faEnvelope}
-              className="text-6xl text-green-800"
+              style={{ fontSize: "clamp(3rem, 4vw, 3.75rem)" }}
+              className="text-green-800"
             />
-            <h1 className="work-sans font-semibold text-2xl mt-2">Email me</h1>
+            <h1
+              className="work-sans font-semibold"
+              style={{
+                fontSize: "clamp(1.125rem, 1.5vw, 1.5rem)",
+                marginTop: "max(0.5rem, 0.75vh)",
+                textAlign: "center",
+                paddingLeft: "1vw",
+                paddingRight: "1vw",
+              }}
+            >
+              Email me
+            </h1>
           </div>
         </a>
         <a
@@ -81,12 +175,25 @@ export default function ContactPanel({ onBack }: { onBack: () => void }) {
           rel="noopener noreferrer"
           className="block"
         >
-          <div className="flex flex-col h-[14rem] justify-center items-center bg-green-100 rounded-xl shadow-xl cursor-pointer hover:bg-green-200 active:bg-green-300">
+          <div
+            className="flex flex-col justify-center items-center bg-green-100 rounded-xl shadow-xl cursor-pointer hover:bg-green-200 active:bg-green-300"
+            style={{ height: "14rem" }}
+          >
             <FontAwesomeIcon
               icon={faFile}
-              className="text-6xl text-green-800"
+              style={{ fontSize: "clamp(3rem, 4vw, 3.75rem)" }}
+              className="text-green-800"
             />
-            <h1 className="work-sans font-semibold text-2xl mt-2">
+            <h1
+              className="work-sans font-semibold"
+              style={{
+                fontSize: "clamp(1.125rem, 1.5vw, 1.5rem)",
+                marginTop: "max(0.5rem, 0.75vh)",
+                textAlign: "center",
+                paddingLeft: "1vw",
+                paddingRight: "1vw",
+              }}
+            >
               View my resume
             </h1>
           </div>

@@ -19,42 +19,83 @@ export default function LandingPanel({
       <motion.img
         src="site-text-caps.png"
         alt="hi, i'm ananya text"
-        className="w-3/5 will-change-transform"
+        style={{ width: "min(60vw, 60%)" }}
+        className="will-change-transform"
         animate={{ y: [0, -12, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: easeInOut }}
       />
-      <h1 className="work-sans font-semibold text-4xl mt-5">
+      <h1
+        className="work-sans font-semibold mt-5"
+        style={{
+          fontSize: "clamp(1.5rem, 2.5vw, 2.25rem)",
+          textAlign: "center",
+          paddingLeft: "max(5vw, 3rem)",
+          paddingRight: "max(5vw, 3rem)",
+          maxWidth: "90%",
+        }}
+      >
         Computer Science, Marketing, Art
       </h1>
-      <h1 className="work-sans text-3xl">@ Northwestern University</h1>
-      <div className="absolute top-0 mt-5">
+      <h1
+        className="work-sans"
+        style={{
+          fontSize: "clamp(1.25rem, 2vw, 1.875rem)",
+          textAlign: "center",
+          paddingLeft: "max(5vw, 3rem)",
+          paddingRight: "max(5vw, 3rem)",
+          maxWidth: "90%",
+        }}
+      >
+        @ Northwestern University
+      </h1>
+      <div className="absolute" style={{ top: "max(1.5vh, 1.25rem)" }}>
         <button
           onClick={onOpenProjects}
-          className="shadow-md work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-blue-300 active:bg-blue-400 transition cursor-pointer"
+          className="shadow-md work-sans-italic border-2 font-semibold rounded-full hover:bg-blue-300 active:bg-blue-400 transition cursor-pointer bg-white"
+          style={{
+            fontSize: "clamp(0.875rem, 1.25vw, 1.25rem)",
+            padding:
+              "clamp(0.5rem, 0.75vw, 0.75rem) clamp(1rem, 1.5vw, 1.5rem)",
+          }}
         >
           PROJECTS
         </button>
       </div>
-      <div className="absolute bottom-0 mb-5">
+      <div className="absolute" style={{ bottom: "max(1.5vh, 1.25rem)" }}>
         <button
           onClick={onOpenContact}
-          className="shadow-md work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-green-300 active:bg-green-400 transition cursor-pointer"
+          className="shadow-md work-sans-italic border-2 font-semibold rounded-full hover:bg-green-300 active:bg-green-400 transition cursor-pointer bg-white"
+          style={{
+            fontSize: "clamp(0.875rem, 1.25vw, 1.25rem)",
+            padding:
+              "clamp(0.5rem, 0.75vw, 0.75rem) clamp(1rem, 1.5vw, 1.5rem)",
+          }}
         >
           CONTACT ME
         </button>
       </div>
-      <div className="absolute -left-8">
+      <div className="absolute" style={{ left: "max(-2vw, -2rem)" }}>
         <button
           onClick={onOpenFun}
-          className="shadow-md rotate-[-90deg] work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-purple-300 active:bg-purple-400 transition cursor-pointer"
+          className="shadow-md rotate-[-90deg] work-sans-italic border-2 font-semibold rounded-full hover:bg-purple-300 active:bg-purple-400 transition cursor-pointer bg-white"
+          style={{
+            fontSize: "clamp(0.875rem, 1.25vw, 1.25rem)",
+            padding:
+              "clamp(0.5rem, 0.75vw, 0.75rem) clamp(1rem, 1.5vw, 1.5rem)",
+          }}
         >
           ARTWORK
         </button>
       </div>
-      <div className="absolute -right-8">
+      <div className="absolute" style={{ right: "max(-2vw, -2rem)" }}>
         <button
           onClick={onOpenMe}
-          className="shadow-md rotate-[90deg] work-sans-italic text-xl border-2 font-semibold px-6 py-3 rounded-full hover:bg-orange-300 active:bg-orange-400 transition cursor-pointer"
+          className="shadow-md rotate-[90deg] work-sans-italic border-2 font-semibold rounded-full hover:bg-orange-300 active:bg-orange-400 transition cursor-pointer bg-white"
+          style={{
+            fontSize: "clamp(0.875rem, 1.25vw, 1.25rem)",
+            padding:
+              "clamp(0.5rem, 0.75vw, 0.75rem) clamp(1rem, 1.5vw, 1.5rem)",
+          }}
         >
           ABOUT ME
         </button>
